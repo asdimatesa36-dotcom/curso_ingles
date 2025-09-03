@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Curso de Inglés Básico — 4 Niveles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fff0f6;
+      --rose: #ff6fb5;
+      --deep: #8b2fa6;
+      --card: #ffffff;
+      --muted: #555;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#222;}
+    header{background:linear-gradient(90deg,var(--rose),var(--deep));color:white;padding:26px 16px;text-align:center;box-shadow:0 6px 20px rgba(139,92,246,0.12)}
+    header h1{margin:0;font-size:24px}
+    .wrap{max-width:1000px;margin:22px auto;padding:16px}
+    .card{background:var(--card);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 8px 24px rgba(16,24,40,0.05)}
+    .lead{color:var(--muted);margin-top:6px}
+    h2{color:var(--deep);margin:6px 0 12px}
+    iframe{width:100%;height:420px;border-radius:10px;border:0;margin:12px 0}
+    .quiz{margin-top:14px}
+    .q{padding:12px;border-radius:10px;background:#fff6fb;margin-bottom:10px}
+    label{display:block;margin:6px 0;cursor:pointer}
+    input[type="text"]{padding:8px;border-radius:8px;border:1px solid #e6d6e6;width:100%;max-width:420px}
+    .btn{background:var(--rose);color:white;padding:12px 18px;border:0;border-radius:10px;cursor:pointer;font-weight:600}
+    .btn.secondary{background:#f3f3f3;color:#333;border:1px solid #eee}
+    .result{margin-top:12px;padding:10px;border-radius:10px;font-weight:700}
+    .ok{background:#e6fffa;color:#064e3b}
+    .bad{background:#fff0f0;color:#7a1f1f}
+    .hidden{display:none}
+    .center{text-align:center}
+    footer{max-width:1000px;margin:18px auto 40px;padding:0 16px;color:#444;font-size:13px}
+    @media(max-width:700px){iframe{height:220px}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌸 Curso de Inglés Básico — 4 Niveles</h1>
+    <p class="lead">Lee la teoría, mira el video, completa el quiz (10 preguntas). Para avanzar debes responder todas correctamente. Al final recibirás un certificado con tu nombre.</p>
+  </header>
+
+  <div class="wrap">
+
+    <!-- inicio: pide nombre -->
+    <div id="inicio" class="card">
+      <h2>Antes de empezar — Dime tu nombre</h2>
+      <p>Escribe tu nombre completo: se usará en tu certificado al finalizar.</p>
+      <input id="nombre" type="text" placeholder="Ej. Ana Sofía Pérez" />
+      <div style="margin-top:12px">
+        <button class="btn" onclick="startCourse()">Comenzar curso</button>
+      </div>
+    </div>
+
+    <!-- Nivel 1 -->
+    <div id="nivel1" class="card hidden">
+      <h2>Nivel 1 — Present Simple (Rutinas y hechos)</h2>
+      <p><b>Explicación:</b> El <i>Present Simple</i> se usa para hablar de rutinas, hábitos, hechos y verdades generales. Para la tercera persona singular (he / she / it) se añade <b>-s</b> al verbo: <i>He works, She plays</i>. En preguntas usamos <b>do/does</b>: <i>Do you study? Does she work?</i></p>
+      <p><b>Ejemplos:</b></p>
+      <ul>
+        <li>I <b>study</b> English every day. (Yo estudio inglés todos los días.)</li>
+        <li>She <b>works</b> at a hospital. (Ella trabaja en un hospital.)</li>
+        <li>The bus <b>leaves</b> at 8 a.m. (El bus sale a las 8.)</li>
+      </ul>
+      <p>Observa: con <b>he/she/it</b> usamos <b>-s</b> (work → works). Para formar preguntas en presente simple usamos <b>do/does</b> antes del sujeto.</p>
+      <div>
+        <iframe src="https://www.youtube.com/embed/o8xOJPKfraU" title="Present Simple video" allowfullscreen></iframe>
+      </div>
+
+      <h3>Quiz Nivel 1 — 10 preguntas</h3>
+      <div id="quiz1" class="quiz"></div>
+      <div id="res1" class="result hidden"></div>
+      <div style="margin-top:12px">
+        <button class="btn" onclick="submitQuiz(1)">Enviar y comprobar Nivel 1</button>
+      </div>
+    </div>
+
+    <!-- Nivel 2 -->
+    <div id="nivel2" class="card hidden">
+      <h2>Nivel 2 — Present Continuous (Acciones en progreso)</h2>
+      <p><b>Explicación:</b> Usamos el <i>Present Continuous</i> para acciones que están ocurriendo ahora o en un periodo cercano. Formamos el tiempo con <b>to be + verbo-ing</b>: <i>I am studying, She is watching</i>. Para la negación añadimos <b>not</b>: <i>He is not (isn't) sleeping</i>.</p>
+      <p><b>Ejemplos:</b></p>
+      <ul>
+        <li>They <b>are playing</b> football now. (Ellos están jugando fútbol ahora.)</li>
+        <li>I <b>am reading</b> a book at the moment. (Estoy leyendo un libro en este momento.)</li>
+        <li>She <b>isn't listening</b> to music. (Ella no está escuchando música.)</li>
+      </ul>
+      <div>
+        <iframe src="https://www.youtube.com/embed/Bcz-le6qEWk" title="Present Continuous video" allowfullscreen></iframe>
+      </div>
+
+      <h3>Quiz Nivel 2 — 10 preguntas</h3>
+      <div id="quiz2" class="quiz"></div>
+      <div id="res2" class="result hidden"></div>
+      <div style="margin-top:12px">
+        <button class="btn" onclick="submitQuiz(2)">Enviar y comprobar Nivel 2</button>
+      </div>
+    </div>
+
+    <!-- Nivel 3 -->
+    <div id="nivel3" class="card hidden">
+      <h2>Nivel 3 — Past Simple (Acciones terminadas)</h2>
+      <p><b>Explicación:</b> El <i>Past Simple</i> usamos para acciones que ocurrieron en un momento concreto del pasado. Verbos regulares añaden <b>-ed</b> (work → worked). Verbos irregulares cambian (go → went, eat → ate).</p>
+      <p><b>Ejemplos:</b></p>
+      <ul>
+        <li>I <b>visited</b> my grandma yesterday. (Visité a mi abuela ayer.)</li>
+        <li>She <b>ate</b> pizza last night. (Ella comió pizza anoche.)</li>
+        <li>They <b>went</b> to the cinema last weekend. (Fueron al cine el fin de semana pasado.)</li>
+      </ul>
+      <div>
+        <iframe src="https://www.youtube.com/embed/Xns2hOPEbeU" title="Past Simple video" allowfullscreen></iframe>
+      </div>
+
+      <h3>Quiz Nivel 3 — 10 preguntas</h3>
+      <div id="quiz3" class="quiz"></div>
+      <div id="res3" class="result hidden"></div>
+      <div style="margin-top:12px">
+        <button class="btn" onclick="submitQuiz(3)">Enviar y comprobar Nivel 3</button>
+      </div>
+    </div>
+
+    <!-- Nivel 4 -->
+    <div id="nivel4" class="card hidden">
+      <h2>Nivel 4 — Future Simple (Futuro con will)</h2>
+      <p><b>Explicación:</b> Usamos <i>will + verbo</i> para decisiones espontáneas, promesas y predicciones. Ejemplo: <i>I will call you</i>. Para negar usamos <b>will not / won't</b>.</p>
+      <p><b>Ejemplos:</b></p>
+      <ul>
+        <li>I <b>will travel</b> tomorrow. (Viajaré mañana.)</li>
+        <li>She <b>won't</b> come to the party. (Ella no vendrá a la fiesta.)</li>
+        <li>They <b>will be</b> happy to help. (Ellos estarán contentos de ayudar.)</li>
+      </ul>
+      <div>
+        <iframe src="https://www.youtube.com/embed/4BFhMtAvOjQ" title="Future Simple video" allowfullscreen></iframe>
+      </div>
+
+      <h3>Quiz Nivel 4 — 10 preguntas</h3>
+      <div id="quiz4" class="quiz"></div>
+      <div id="res4" class="result hidden"></div>
+      <div style="margin-top:12px">
+        <button class="btn" onclick="submitQuiz(4)">Enviar y comprobar Nivel 4</button>
+      </div>
+    </div>
+
+    <!-- Certificado pantalla completa -->
+    <div id="certificado" class="card hidden">
+      <div style="text-align:center;padding:20px">
+        <div style="display:inline-block;background:linear-gradient(90deg,#fff,#fff);padding:18px;border-radius:12px;border:8px solid rgba(255,111,181,0.25)">
+          <h1 style="margin:0;color:var(--deep)">🎓 Certificado</h1>
+          <p id="certText" style="margin-top:8px;font-weight:600"></p>
+          <div style="background:white;padding:18px;border-radius:8px;margin-top:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08)">
+            <h2 id="certName" style="color:var(--rose);margin:8px 0;font-size:22px"></h2>
+            <p id="certCourse" style="margin:6px 0">Ha completado satisfactoriamente el <b>Curso de Inglés Básico — 4 niveles</b>.</p>
+            <p id="certDate" style="margin-top:8px;color:#666"></p>
+          </div>
+          <div style="margin-top:14px">
+            <button class="btn" onclick="window.print()">Imprimir / Guardar en PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="center">Hecho con ❤️ — Practica diario y mejora tu inglés.</footer>
+
+<script>
+// Respuestas correctas definidas (mezcla MCQ y fill-in). Para fill-in, compare toLowerCase trimmed.
+const correctAnswers = {
+  1: [
+    {type:'mcq', answer:'b', prompt:"He ___ to school." , options:{a:"go", b:"goes", c:"going"}},
+    {type:'mcq', answer:'a', prompt:"Which is correct? I ___ English every day.", options:{a:"study", b:"studies", c:"studying"}},
+    {type:'mcq', answer:'b', prompt:"Choose: She ___ coffee.", options:{a:"drink", b:"drinks", c:"drinking"}},
+    {type:'mcq', answer:'b', prompt:"The train ___ at 8am (schedule).", options:{a:"leave", b:"leaves", c:"leaving"}},
+    {type:'fill', answer:'do you', prompt:"Complete: ___ you like pizza? (escribe la parte faltante)", placeholder:"ej. Do you"}, 
+    {type:'mcq', answer:'a', prompt:"They ___ in the park every afternoon.", options:{a:"walk", b:"walks", c:"walking"}},
+    {type:'fill', answer:'she', prompt:"Complete: ___ works in a hospital. (palabra faltante)", placeholder:"ej. She"},
+    {type:'mcq', answer:'c', prompt:"Choose correct negative: He ___ not eat meat (informal).", options:{a:"do", b:"does", c:"doesn't"}},
+    {type:'mcq', answer:'a', prompt:"Which is general truth? Water ___ at 100°C.", options:{a:"boils", b:"boil", c:"boiling"}}, // actually 'boils' is correct -> pick a
+    {type:'fill', answer:'i', prompt:"Complete: ___ am a student. (pronoun)", placeholder:"I"}
+  ],
+  2: [
+    {type:'mcq', answer:'b', prompt:"Right now she ___ a book.", options:{a:"reads", b:"is reading", c:"read"}},
+    {type:'fill', answer:'are playing', prompt:"They ___ football at the moment. (escribe la forma correcta)", placeholder:"are playing"},
+    {type:'mcq', answer:'a', prompt:"I ___ dinner now.", options:{a:"am eating", b:"eat", c:"eats"}},
+    {type:'mcq', answer:'a', prompt:"He ___ TV at the moment.", options:{a:"is watching", b:"watches", c:"watch"}},
+    {type:'fill', answer:"we are studying", prompt:"Complete: We ___ for the exam this week.", placeholder:"we are studying"},
+    {type:'mcq', answer:'c', prompt:"Choose the negative: She ___ working today.", options:{a:"is", b:"are", c:"isn't"}},
+    {type:'mcq', answer:'b', prompt:"The kids ___ in the garden right now.", options:{a:"plays", b:"are playing", c:"play"}},
+    {type:'fill', answer:'am learning', prompt:"I ___ a new song at the moment. (escribe la forma correcta)", placeholder:"am learning"},
+    {type:'mcq', answer:'b', prompt:"Why ___ you ___ so loudly? (correct pair)", options:{a:"are / sing", b:"are / singing", c:"is / singing"}},
+    {type:'mcq', answer:'b', prompt:"He ___ for the bus now.", options:{a:"waits", b:"is waiting", c:"wait"}}
+  ],
+  3: [
+    {type:'mcq', answer:'b', prompt:"Yesterday I ___ to the market.", options:{a:"go", b:"went", c:"gone"}},
+    {type:'mcq', answer:'a', prompt:"They ___ a movie last night.", options:{a:"watched", b:"watch", c:"watching"}},
+    {type:'fill', answer:'ate', prompt:"She ___ pizza yesterday. (verbo en pasado)", placeholder:"ate"},
+    {type:'mcq', answer:'b', prompt:"We ___ at 7pm (action finished).", options:{a:"arrive", b:"arrived", c:"arriving"}},
+    {type:'mcq', answer:'a', prompt:"He ___ his homework last weekend.", options:{a:"did", b:"do", c:"does"}},
+    {type:'fill', answer:'bought', prompt:"I ___ a book two days ago. (verbo en pasado)", placeholder:"bought"},
+    {type:'mcq', answer:'b', prompt:"They ___ at the party last night.", options:{a:"dance", b:"danced", c:"dancing"}},
+    {type:'mcq', answer:'b', prompt:"She ___ the guitar yesterday.", options:{a:"play", b:"played", c:"plays"}},
+    {type:'mcq', answer:'a', prompt:"We ___ breakfast early this morning.", options:{a:"had", b:"have", c:"has"}},
+    {type:'fill', answer:'passed', prompt:"Did you ___ the test yesterday? (verbo base)", placeholder:"pass/passed"}
+  ],
+  4: [
+    {type:'mcq', answer:'a', prompt:"I think he ___ come tomorrow.", options:{a:"will", b:"is", c:"was"}},
+    {type:'mcq', answer:'a', prompt:"She ___ help you with your homework.", options:{a:"will", b:"does", c:"did"}},
+    {type:'fill', answer:'will', prompt:"They ___ visit us next week. (completa con 'will')", placeholder:"will"},
+    {type:'mcq', answer:'a', prompt:"I ___ call you later (decision now).", options:{a:"will", b:"am going", c:"did"}},
+    {type:'mcq', answer:'a', prompt:"We ___ go to the party.", options:{a:"will", b:"go", c:"went"}},
+    {type:'mcq', answer:'a', prompt:"It ___ not (won't) rain tonight.", options:{a:"will", b:"does", c:"did"}},
+    {type:'fill', answer:'will', prompt:"He ___ pass the exam. (complete)", placeholder:"will"},
+    {type:'mcq', answer:'a', prompt:"I promise I ___ be there.", options:{a:"will", b:"am", c:"was"}},
+    {type:'mcq', answer:'a', prompt:"___ you ___ the test tomorrow? (correct pair)", options:{a:"Will / take", b:"Are / take", c:"Did / taken"}},
+    {type:'fill', answer:'will', prompt:"They said they ___ help us next month.", placeholder:"will"}
+  ]
+};
+
+let studentName = '';
+
+// helper show/hide
+function show(id){ document.getElementById(id).classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'}); }
+function hide(id){ document.getElementById(id).classList.add('hidden'); }
+
+// Start course
+function startCourse(){
+  const nameInput = document.getElementById('nombre');
+  const val = nameInput.value.trim();
+  if(!val){ alert('Por favor escribe tu nombre completo.'); nameInput.focus(); return; }
+  studentName = val;
+  hide('inicio');
+  show('nivel1');
+  renderQuiz(1);
+}
+
+// render quiz based on correctAnswers structure
+function renderQuiz(level){
+  const container = document.getElementById('quiz'+level);
+  container.innerHTML = '';
+  const arr = correctAnswers[level];
+  arr.forEach((item, idx)=>{
+    const n = idx+1;
+    const div = document.createElement('div'); div.className='q';
+    const qnum = `<strong>${n}.</strong> ${item.prompt}`;
+    let inner = `<div>${qnum}</div>`;
+    if(item.type==='mcq'){
+      inner += `<div style="margin-top:8px">`;
+      for(const key of ['a','b','c']){
+        const text = item.options[key];
+        inner += `<label><input type="radio" name="q${level}_${n}" value="${key}"> ${text}</label>`;
+      }
+      inner += `</div>`;
+    } else if(item.type==='fill'){
+      inner += `<div style="margin-top:8px"><input type="text" id="q${level}_${n}" placeholder="${item.placeholder||''}"></div>`;
+    }
+    div.innerHTML = inner;
+    container.appendChild(div);
+  });
+  // hide any previous result
+  const res = document.getElementById('res'+level);
+  res.classList.add('hidden'); res.innerHTML='';
+}
+
+// submit and check; require 100% to advance
+function submitQuiz(level){
+  const arr = correctAnswers[level];
+  let correct = 0;
+  const wrongList = [];
+  arr.forEach((item, idx)=>{
+    const n = idx+1;
+    if(item.type==='mcq'){
+      const radios = document.getElementsByName('q'+level+'_'+n);
+      let chosen = null;
+      radios.forEach(r=>{ if(r.checked) chosen = r.value; });
+      if(chosen===item.answer){ correct++; }
+      else { wrongList.push({n, expected:item.answer, chosen}); }
+    } else {
+      const input = document.getElementById('q'+level+'_'+n);
+      const user = input ? input.value.trim().toLowerCase() : '';
+      if(user === item.answer.toLowerCase()){ correct++; }
+      else { wrongList.push({n, expected:item.answer, chosen:user}); }
+    }
+  });
+  const resDiv = document.getElementById('res'+level);
+  resDiv.classList.remove('hidden');
+  if(correct === arr.length){
+    resDiv.className = 'result ok'; resDiv.innerText = `✅ Excelente — respuesta correcta en todas las preguntas (${correct}/${arr.length}).`;
+    // proceed to next level or certificate
+    if(level < 4){
+      // render next and show it
+      renderQuiz(level+1);
+      hide('nivel'+level);
+      show('nivel'+(level+1));
+    } else {
+      // finished course
+      showCertificate();
+    }
+  } else {
+    resDiv.className = 'result bad';
+    let percent = Math.round((correct/arr.length)*100);
+    let msg = `❌ Obtuviste ${correct}/${arr.length} (${percent}%). Debes contestar todas correctamente para avanzar.`;
+    // give feedback which questions wrong with expected
+    msg += '\n\nPreguntas incorrectas:\n';
+    wrongList.forEach(w=>{
+      msg += `Pregunta ${w.n} — esperada: ${w.expected} — tu respuesta: ${w.chosen || 'ninguna'}\n`;
+    });
+    // show in a readable way
+    resDiv.innerText = msg;
+    // allow retry (do nothing else)
+    window.scrollTo({top:resDiv.offsetTop-20,behavior:'smooth'});
+  }
+}
+
+// certificate
+function showCertificate(){
+  hide('nivel4'); hide('nivel3'); hide('nivel2'); hide('nivel1');
+  const txt = document.getElementById('certText');
+  txt.innerText = 'Certificamos que';
+  document.getElementById('certName').innerText = studentName;
+  document.getElementById('certDate').innerText = 'Fecha: ' + (new Date()).toLocaleDateString();
+  show('certificado');
+}
+
+</script>
+</body>
+</html>
